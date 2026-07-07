@@ -76,9 +76,8 @@ We will use the Earle Philhower core to add RP2350 (Pico 2) support to the Ardui
 - Paste the following URL into the **Additional Boards Manager URLs** field:
 - Plaintext
 
-<https://github.com/earlephilhower/arduino-pico/releases/download/global/package_rp2040_index.json>
+<https://github.com/earlephilhower/arduino-pico/releases/download/global/package_rp2040_index.json>
 
-- 
 - Click **OK** to save the settings.
 
 ### **Step 3.2: Installing the Pico 2 Board Package**
@@ -104,39 +103,30 @@ To make the TFT_eSPI library compatible with the Pico 2 hardware SPI configurati
 
 C++
 
-#define USER_SETUP_LOADED
+#define USER_SETUP_LOADED
 
-# define ILI9341_DRIVER
+#define USER_SETUP_LOADED
 
-# define TFT_MISO -1 // MISO pin is not used for the display
+#define ILI9341_DRIVER
 
-# define TFT_MOSI 19
+#define TFT_MISO -1 // MISO pin is not used for the display
+#define TFT_MOSI 19
+#define TFT_SCLK 18
+#define TFT_CS   17
+#define TFT_DC   20
+#define TFT_RST  21
 
-# define TFT_SCLK 18
+#define LOAD_GLCD
+#define LOAD_FONT2
+#define LOAD_FONT4
+#define LOAD_FONT6
+#define LOAD_FONT7
+#define LOAD_FONT8
+#define LOAD_GFXFF
 
-# define TFT_CS 17
+#define SPI_FREQUENCY       60000000 // Stable 60 MHz SPI speed for Pico 2
+#define SPI_READ_FREQUENCY  20000000
 
-# define TFT_DC 20
-
-# define TFT_RST 21
-
-# define LOAD_GLCD
-
-# define LOAD_FONT2
-
-# define LOAD_FONT4
-
-# define LOAD_FONT6
-
-# define LOAD_FONT7
-
-# define LOAD_FONT8
-
-# define LOAD_GFXFF
-
-# define SPI_FREQUENCY 60000000 // Stable 60 MHz SPI speed for Pico 2
-
-# define SPI_READ_FREQUENCY 20000000
 
 ## **5\. Arduino IDE Tools Menu Settings**
 
